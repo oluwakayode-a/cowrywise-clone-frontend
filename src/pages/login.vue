@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="md:px-14 md:py-8 xl:px-36">
         <a href="">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -16,69 +16,129 @@
             </svg>
         </a>
 
-        <div class="mt-10">
-            <h1
-                class="
-                    text-[#0a2e65] text-3xl
-                    font-bold
-                    tracking-tight
-                    leading-snug
-                "
-            >
-                Jump right back in
-            </h1>
-            <h1 class="text-2xl text-gray-400 font-bold mt-3">
-                Sign in to continue
-            </h1>
-        </div>
+        <div class="lg:flex lg:items-start w-full lg:mt-20 xl:px-10 2xl:px-36">
+            <div class="mt-10 lg:w-1/2">
+                <h1
+                    class="
+                        text-[#0a2e65] text-3xl
+                        font-bold
+                        tracking-tight
+                        leading-snug
+                        lg:text-5xl
+                        lg:mt-4
+                    "
+                >
+                    Jump right back in
+                </h1>
+                <h1 class="text-2xl text-gray-400 font-bold mt-3">
+                    Sign in to continue
+                </h1>
+            </div>
 
-        <div class="bg-white py-10 px-5 rounded-lg border mt-10">
-            <form
-                novalidate=""
-                action=""
-                class="space-y-6 ng-untouched ng-pristine ng-valid"
-            >
-                <div class="space-y-1 text-sm relative">
-                    <input
-                        type="text"
-                        name="username"
-                        id="username"
-                        placeholder="Email"
-                        class="w-full px-4 py-3 border-gray-300 rounded-md peer"
-                    />
-                    <label for="" class="absolute text-sm left-0 duration-300 transform -translate-y-6 scale-75 top-3 z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-                        Email
-                    </label>
-                </div>
-                <div class="space-y-1 text-sm">
-                    <label for="password" class="block">Password</label>
-                    <input
-                        type="password"
-                        name="password"
-                        id="password"
-                        placeholder="Password"
-                        class="w-full px-4 py-3 border-gray-300 rounded-md"
-                    />
-                    <div class="text-[#0066f5] font-bold text-sm py-2">
+            <div class="bg-white py-10 px-5 lg:px-10 rounded-lg border mt-10 lg:w-1/2">
+                <form
+                    novalidate=""
+                    action=""
+                    class="space-y-6 ng-untouched ng-pristine ng-valid"
+                >
+                    <div class="space-y-1 text-sm relative">
+                        <input
+                            type="text"
+                            name="username"
+                            id="username"
+                            placeholder=" "
+                            class="w-full px-4 py-3 border-gray-300 rounded-md peer focus:bg-white text-base"
+                        />
+                        <label
+                            for=""
+                            class="
+                                absolute
+                                text-base
+                                left-3
+                                duration-300
+                                transform
+                                -translate-y-6
+                                scale-75
+                                top-2
+                                z-10
+                                px-2
+                                origin-[0]
+                                text-gray-600
+                                bg-white
+                                peer-focus:text-primary
+                                peer-focus:text-blue-500
+                                peer-placeholder-shown:bg-white
+                                peer-placeholder-shown:scale-100
+                                peer-placeholder-shown:translate-y-0
+                                peer-focus:scale-75 peer-focus:-translate-y-6
+                            "
+                        >
+                            Email Address
+                        </label>
+                    </div>
+                    <div class="space-y-1 text-sm relative">
+                        <EyeIcon v-if="hidePassword" class="text-gray-500 absolute inset-y-5 px-3 h-5 right-0 text-accent cursor-pointer" @click="hidePassword = !hidePassword" />
+                        <EyeOffIcon v-else class="text-gray-500 absolute inset-y-5 px-3 h-5 right-0 text-accent cursor-pointer" @click="hidePassword = !hidePassword" />
+                        <input
+                            :type="hidePassword ? 'password' : 'text'"
+                            name="password"
+                            id="password"
+                            placeholder=" "
+                            class="w-full px-4 py-3 border-gray-300 rounded-md peer focus:bg-white text-base"
+                        />
+                        <label
+                            for=""
+                            class="
+                                absolute
+                                text-base
+                                left-3
+                                duration-300
+                                transform
+                                -translate-y-6
+                                scale-75
+                                top-2
+                                z-10
+                                px-2
+                                origin-[0]
+                                text-gray-600
+                                bg-white
+                                peer-focus:text-primary
+                                peer-focus:text-blue-500
+                                peer-placeholder-shown:bg-white
+                                peer-placeholder-shown:scale-100
+                                peer-placeholder-shown:translate-y-0
+                                peer-focus:scale-75 peer-focus:-translate-y-6
+                            "
+                        >
+                            Password
+                        </label>
+                    </div>
+                    <div class="text-[#0066f5] font-bold text-sm">
                         <a rel="noopener noreferrer" href="#"
                             >Forgot Password?</a
                         >
                     </div>
 
-                    <div class="text-[#0066f5] font-bold text-xs py-2">
-                        <span class="text-gray-300">New user?</span>
-                        <a rel="noopener noreferrer" href="#"
-                            >Create new account</a
-                        >
+                    <div class="lg:flex lg:justify-between lg:items-center">
+                        <div class="text-[#0066f5] font-bold text-xs">
+                            <span class="text-gray-300 mr-3">New user?</span>
+                            <a rel="noopener noreferrer" href="#"
+                                >Create new account</a
+                            >
+                        </div>
+                        <v-button>Sign In</v-button>
                     </div>
-                </div>
-                <v-button>Sign In</v-button>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
 </template>
 
 <script setup>
+import { EyeIcon, EyeOffIcon } from "@heroicons/vue/solid"
+import { ref } from "vue"
+
+const hidePassword = ref(true)
 </script>
 
 <style lang="scss" scoped>
