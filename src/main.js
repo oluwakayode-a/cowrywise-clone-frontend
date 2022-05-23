@@ -6,6 +6,7 @@ import generatedRoutes from 'virtual:generated-pages'
 import App from './App.vue'
 import store from './store'
 import './index.css'
+import './styles.css'
 
 const routes = setupLayouts(generatedRoutes)
 
