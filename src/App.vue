@@ -4,7 +4,6 @@
             {{ content ? `${content} | ${siteName}` : siteName }}
         </template>
     </metainfo>
-    <Sidebar />
     <router-view />
 </template>
 

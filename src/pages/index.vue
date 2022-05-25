@@ -1,5 +1,5 @@
 <template>
-                          
+    Hello                      
 </template>
 
 <script setup>
@@ -12,3 +12,8 @@ useMeta({
     title: 'Homepage',
 })
 </script>
+
+<route lang="yaml">
+meta:
+    layout: default
+</route>
